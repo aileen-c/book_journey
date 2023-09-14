@@ -1,7 +1,10 @@
 /* Reset some default styles for consistency */
 body, h1, h2, p {
     font-family: 'Times New Roman', Times, serif;
-    color: #262c2a;
+    color: #553D25;
+}
+body {
+    background-color: #F7F7F2;
 }
 
 /* Basic styling for header and footer */
@@ -111,7 +114,7 @@ header, footer {
     margin-right: 2px;
     margin-bottom: 30px;
     
-    border: 2px solid #262c2a;
+    border: 2px solid #553D25;
     
 }
 
@@ -123,3 +126,9 @@ header, footer {
 #add-book-button {
     margin-left: 30px;
 }
+
+
+a {
+    text-decoration: none;
+}
+
