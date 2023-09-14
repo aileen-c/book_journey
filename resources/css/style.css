@@ -1,6 +1,6 @@
 /* Reset some default styles for consistency */
 body, h1, h2, p {
-
+    font-family: 'Times New Roman', Times, serif;
     color: #262c2a;
 }
 
@@ -74,3 +74,52 @@ header, footer {
     padding: 0;
 }
 
+.button {
+    background-color: #899878;
+    color: #F7F7F2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #F7F7F2;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #b88c9e; 
+    border-radius: 10px;
+}
+
+.books-read-label {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.books-read-line {
+    margin-top: 30px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 30px;
+    
+    border: 2px solid #262c2a;
+    
+}
+
+
+.container {
+    text-align: left;
+}
+
+#add-book-button {
+    margin-left: 30px;
+}
