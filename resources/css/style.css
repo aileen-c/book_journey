@@ -1,0 +1,76 @@
+/* Reset some default styles for consistency */
+body, h1, h2, p {
+
+    color: #262c2a;
+}
+
+/* Basic styling for header and footer */
+header, footer {
+    background-color: #899878;
+    color: E4E6C3;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Style your main content here */
+.main {
+    min-height: 100vh;
+}
+
+.book-form {
+    /* Style for the book entry form */
+}
+
+.book-list {
+    /* Style for the list of books */
+}
+
+.goal-progress {
+    /* Style for the reading goal progress */
+}
+
+/* Add more styles as needed */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px 500px;
+    min-height: 100%;
+}
+
+/* Apply styles to the text inside the boxes */
+.box {
+    font-size: 24px; /* Adjust the font size as needed */
+    background-color: #E4E6C3; /* Text color */
+    text-align: center; /* Text alignment */
+    padding: 10px; /* Add padding for better visual appearance */
+    /* You can add more styles as needed */
+    margin: 10px;
+}
+
+#box1 {
+    grid-row-end: span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-box {
+    background-color: #F7F7F2;
+    flex: 1;
+    width: 60%
+    justify-content: center;
+    align-items: center; 
+    margin: 30px;
+    
+}
+
+.box-heading {
+    font-size: 28;
+}
+
+ h1, h2 {
+    color: #F7F7F2;
+    margin: 0;
+    padding: 0;
+}
+
