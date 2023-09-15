@@ -5,3 +5,15 @@
 .book-item {
     text-align: left;
 }
+
+#remove-book-dropdown {
+    width: 70px;
+    margin-left: 30px;
+
+}
+
+#remove-book-button {
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 30px;
+}

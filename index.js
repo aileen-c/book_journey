@@ -3,7 +3,45 @@ const savedReadingList = JSON.parse(localStorage.getItem('readingList')) || [];
 
 document.addEventListener('DOMContentLoaded', function () {
     displayBooks();
+
+    // Populate the dropdown with book titles
+    const removeBookDropdown = document.getElementById('remove-book-dropdown');
+    savedReadingList.forEach((book, index) => {
+        const option = document.createElement('option');
+        option.value = index; // Use the book index as the value
+        option.text = book.title; // Display the book title
+        removeBookDropdown.appendChild(option);
+    });
+
+    // Add an event listener to the "Remove Book" button
+    const removeBookButton = document.getElementById('remove-book-button');
+    removeBookButton.addEventListener('click', function () {
+        // Get the selected book index from the dropdown
+        const selectedBookIndex = removeBookDropdown.value;
+
+        // Ensure a book is selected before proceeding
+        if (selectedBookIndex !== '') {
+            // Remove the selected book from the readingList array
+            savedReadingList.splice(selectedBookIndex, 1);
+
+            // Update the local storage (if needed)
+            localStorage.setItem('readingList', JSON.stringify(savedReadingList));
+
+            // Repopulate the dropdown to reflect the updated list
+            removeBookDropdown.innerHTML = '';
+            savedReadingList.forEach((book, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.text = book.title;
+                removeBookDropdown.appendChild(option);
+            });
+
+            // You can also update the display of books on the page (if needed)
+            displayBooks();
+        }
+    });
 });
+
 
 function displayBooks() {
     console.log("displayBooksCalled");
@@ -12,7 +50,7 @@ function displayBooks() {
     // Clear any existing content in box1
     box1.innerHTML = "";
     console.log("reading list array: ");
-    console.log(readingList);
+    console.log(savedReadingList);
 
     // Create an unordered list to display the books
     const bookList = document.createElement("ul");
@@ -38,3 +76,4 @@ function displayBooks() {
     // Append the list to box1
     box1.appendChild(bookList);
 }
+
