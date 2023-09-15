@@ -20,17 +20,6 @@ header, footer {
     min-height: 100vh;
 }
 
-.book-form {
-    /* Style for the book entry form */
-}
-
-.book-list {
-    /* Style for the list of books */
-}
-
-.goal-progress {
-    /* Style for the reading goal progress */
-}
 
 /* Add more styles as needed */
 
@@ -60,10 +49,10 @@ header, footer {
 .inner-box {
     background-color: #F7F7F2;
     flex: 1;
-    width: 60%
+    width: 80%;
     justify-content: center;
     align-items: center; 
-    margin: 30px;
+    margin: 30px auto;
     
 }
 
@@ -119,7 +108,7 @@ header, footer {
 }
 
 
-.container {
+.container, .books-read-container {
     text-align: left;
 }
 

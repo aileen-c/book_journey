@@ -30,17 +30,12 @@ document.getElementById("add-book-form").addEventListener("submit", function(eve
 });
 
 
-function logSubmit(event) {
-    log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;
-    event.preventDefault();
-  }
-  
-  const form = document.getElementById("add-book-form");
-  const log = document.getElementById("log");
-  form.addEventListener("submit", logSubmit);
-
 function addBookToReadingList(book) {
+    let readingList = JSON.parse(localStorage.getItem('readingList')) || [];
     readingList.push(book);
-    displayBooks();
+    console.log("book added to list!")
+    console.log(readingList);
+    localStorage.setItem('readingList', JSON.stringify(readingList));
+
 }
 
