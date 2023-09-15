@@ -4,6 +4,16 @@ const savedReadingList = JSON.parse(localStorage.getItem('readingList')) || [];
 document.addEventListener('DOMContentLoaded', function () {
     displayBooks();
 
+    // Select the <p> element by its id
+    const targetNumberDisplay = document.getElementById("target-number");
+
+    // Update the content of the element with the targetNumber value
+    targetNumberDisplay.innerHTML = targetNumber;
+
+    const numBooksDisplay = document.getElementById("num-books");
+    numBooksDisplay.innerHTML = numBooks;
+    console.log(numBooks);
+
     // Populate the dropdown with book titles
     const removeBookDropdown = document.getElementById('remove-book-dropdown');
     savedReadingList.forEach((book, index) => {
@@ -23,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (selectedBookIndex !== '') {
             // Remove the selected book from the readingList array
             savedReadingList.splice(selectedBookIndex, 1);
+
+            updateNumBooks(-1);
 
             // Update the local storage (if needed)
             localStorage.setItem('readingList', JSON.stringify(savedReadingList));
@@ -75,5 +87,18 @@ function displayBooks() {
 
     // Append the list to box1
     box1.appendChild(bookList);
+
+
+    updateProgressBar();
+
+
+}
+
+
+// Function to update the progress bar
+function updateProgressBar() {
+    const progressBar = document.querySelector('.progress');
+    const progressRatio = (numBooks / targetNumber) * 100; // Calculate the progress ratio in percentage
+    progressBar.style.width = `${progressRatio}%`; // Update the width of the progress bar
 }
 

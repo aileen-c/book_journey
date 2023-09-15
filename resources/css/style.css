@@ -15,13 +15,9 @@ header, footer {
     padding: 1rem;
 }
 
-/* Style your main content here */
 .main {
     min-height: 100vh;
 }
-
-
-/* Add more styles as needed */
 
 .wrapper {
     display: grid;

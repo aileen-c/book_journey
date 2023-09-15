@@ -8,6 +8,10 @@ document.getElementById("add-book-form").addEventListener("submit", function(eve
 
     console.log("submit button pressed");
 
+    numBooks += 1;
+    console.log(numBooks);
+    localStorage.setItem('numBooks', numBooks);
+
 
     //collect book data from form
     const title = document.getElementById("title").value;
