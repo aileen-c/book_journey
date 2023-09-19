@@ -24,4 +24,7 @@ form.addEventListener("submit", function (event) {
     targetNumber = targetBooksValue;
     localStorage.setItem("goal", targetNumber);
     //TO-DO: save the goal.
+
+    window.location.href="index.html"
+
 });
