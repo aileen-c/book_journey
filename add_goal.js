@@ -22,7 +22,6 @@ form.addEventListener("submit", function (event) {
     }
 
     targetNumber = targetBooksValue;
-
-    // If the input is valid, you can proceed with form submission or other actions
-    // For example, you can add the book to the reading list or save the goal.
+    localStorage.setItem("goal", targetNumber);
+    //TO-DO: save the goal.
 });

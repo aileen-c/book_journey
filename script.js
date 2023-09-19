@@ -1,6 +1,6 @@
 
 // Declare targetNumber as a global variable
-var targetNumber = 7; // You can set an initial value
+var targetNumber = parseInt(localStorage.getItem('goal')) || 0; // You can set an initial value
 // Initialize numBooks from localStorage (if it exists)
 var numBooks = parseInt(localStorage.getItem('numBooks')) || 0;
 
