@@ -97,11 +97,19 @@ function displayBooks() {
 
 // Function to update the progress bar
 function updateProgressBar() {
+
+    if (targetNumber === 0) {
+        return;
+    }
+
     const progressBar = document.querySelector('.progress');
     const progressRatio = (numBooks / targetNumber) * 100; // Calculate the progress ratio in percentage
+
     if (progressRatio <= 100) {
         progressBar.style.width = `${progressRatio}%`; // Update the width of the progress bar
-    } else {
+
+    } 
+    else {
         progressBar.style.width = "100%";
     }
 

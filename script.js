@@ -1,9 +1,9 @@
 
 // Declare targetNumber as a global variable
-var targetNumber = parseInt(localStorage.getItem('goal')) || 0; // You can set an initial value
+var targetNumber = parseInt(localStorage.getItem('goal')) || 10; // You can set an initial value
 // Initialize numBooks from localStorage (if it exists)
 var numBooks = parseInt(localStorage.getItem('numBooks')) || 0;
-
+// localStorage.clear();
 
 //initialize an empty reading list array
 const readingList = [];
@@ -30,6 +30,8 @@ function updateNumBooks(change) {
     const numBooksElement = document.getElementById('num-books');
     numBooks += change; // Update the target number
     numBooksElement.textContent = numBooks; // Update the displayed target number
+
+    localStorage.setItem('numBooks', numBooks);
 }
 
 
