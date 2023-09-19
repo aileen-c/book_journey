@@ -71,7 +71,15 @@ header, footer {
     padding: 8px;
     font-weight: bold;
     font-family:'Times New Roman', Times, serif;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+
 }
+
+.button:hover {
+    background-color: #e74c3c;
+    color: #ffffff;
+  }
 
 .progress-bar {
     width: 100%;
