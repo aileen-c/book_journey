@@ -9,7 +9,14 @@
 #remove-book-dropdown {
     width: 70px;
     margin-left: 30px;
+    display: none;
+    background-color: blueviolet;
+    border: 1px solid coral;
 
+}
+
+#remove-book-dropdown li {
+    color: gold;
 }
 
 #remove-book-button {
@@ -25,4 +32,9 @@
     padding: 0 5px; /* Adjust padding as needed */
     font-size: 14px; /* Adjust font size as needed */
     margin-top: 10px; /* Adjust the margin to position below the progress bar */
+}
+
+.info {
+    margin-top: 70px;
+    text-align: left;
 }

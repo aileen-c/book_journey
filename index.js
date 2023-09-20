@@ -14,6 +14,18 @@ document.addEventListener('DOMContentLoaded', function () {
     numBooksDisplay.innerHTML = numBooks;
     console.log(numBooks);
 
+
+    //display goal dates
+    const goalStartDate = localStorage.getItem("goalStartDate");
+    const goalEndDate = localStorage.getItem("goalEndDate");
+
+
+    document.getElementById("start-date-display").textContent = goalStartDate;
+    document.getElementById("end-date-display").textContent = goalEndDate;
+
+    //display goal progress
+    document.getElementById("progress-percent").textContent = Math.round(localStorage.getItem("percent"));
+
     // Populate the dropdown with book titles
     const removeBookDropdown = document.getElementById('remove-book-dropdown');
     savedReadingList.forEach((book, index) => {
@@ -104,13 +116,29 @@ function updateProgressBar() {
 
     const progressBar = document.querySelector('.progress');
     const progressRatio = (numBooks / targetNumber) * 100; // Calculate the progress ratio in percentage
+    
 
     if (progressRatio <= 100) {
         progressBar.style.width = `${progressRatio}%`; // Update the width of the progress bar
-
+        localStorage.setItem('percent', progressRatio);
     } 
     else {
         progressBar.style.width = "100%";
+        localStorage.setItem('percent', 100);
     }
 
 }
+
+// Get the dropdown button and menu
+const dropdownBtn = document.getElementById("remove-book-button");
+const dropdownMenu = document.getElementById("remove-book-dropdown");
+
+// Show the dropdown menu on hover
+dropdownBtn.addEventListener("click", function () {
+  dropdownMenu.style.display = "block";
+});
+
+// Hide the dropdown menu when the mouse leaves the button or menu
+dropdownBtn.addEventListener("mouseout", function () {
+  dropdownMenu.style.display = "none";
+});
