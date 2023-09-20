@@ -9,20 +9,42 @@
 #remove-book-dropdown {
     width: 70px;
     margin-left: 30px;
+    margin-top: 10px;
     display: none;
-    background-color: blueviolet;
+    background-color: #E4E6C3;
     border: 1px solid coral;
-
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
 }
 
 #remove-book-dropdown li {
     color: gold;
+
 }
 
 #remove-book-button {
     width: 150px;
     margin-top: 10px;
     margin-left: 30px;
+}
+
+.remove-book-container {
+    /* grid-template-columns: 1fr 1fr; */
+    display: grid;
+}
+
+
+
+#done-remove {
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 30px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: none;
+    font-size: small;
+    background-color: coral;
 }
 
 .progress-numbers {

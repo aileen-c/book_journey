@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
         removeBookDropdown.appendChild(option);
     });
 
-    // Add an event listener to the "Remove Book" button
-    const removeBookButton = document.getElementById('remove-book-button');
-    removeBookButton.addEventListener('click', function () {
+
+
+    // Add an event listener to the "Confirm Remove" button
+    const confirmRemoveButton = document.getElementById('done-remove');
+    confirmRemoveButton.addEventListener('click', function () {
         // Get the selected book index from the dropdown
         const selectedBookIndex = removeBookDropdown.value;
 
@@ -132,13 +134,15 @@ function updateProgressBar() {
 // Get the dropdown button and menu
 const dropdownBtn = document.getElementById("remove-book-button");
 const dropdownMenu = document.getElementById("remove-book-dropdown");
+const doneButton = document.getElementById("done-remove");
 
-// Show the dropdown menu on hover
+// Show the dropdown menu on click
 dropdownBtn.addEventListener("click", function () {
   dropdownMenu.style.display = "block";
+  doneButton.style.display = "block";
 });
 
-// Hide the dropdown menu when the mouse leaves the button or menu
-dropdownBtn.addEventListener("mouseout", function () {
-  dropdownMenu.style.display = "none";
-});
+doneButton.addEventListener("click", function () {
+    dropdownMenu.style.display = "none";
+    doneButton.style.display = "none";
+  });
