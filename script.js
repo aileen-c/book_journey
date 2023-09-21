@@ -8,17 +8,6 @@ var numBooks = parseInt(localStorage.getItem('numBooks')) || 0;
 //initialize an empty reading list array
 const readingList = [];
 
-// Wait for the HTML document to be fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    var header = document.querySelector('header');
-    header.addEventListener('click', function () {
-        alert('Header clicked!');
-        console.log("header is clicked");
-
-    });
-
-});
-
 
 function updateTargetNumber(change) {
     const targetNumberElement = document.getElementById('target-number');
@@ -37,5 +26,8 @@ function updateNumBooks(change) {
 
 
 
-
-
+function displayProgressStats() {
+    //display number of books read/need to be read
+    document.getElementById("num-more-books").textContent = targetNumber - numBooks;
+    document.getElementById("num-books-read").textContent = numBooks;
+}

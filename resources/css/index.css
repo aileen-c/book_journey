@@ -23,6 +23,10 @@
 
 }
 
+#progress-percent {
+    font-weight: bold;
+}
+
 #remove-book-button {
     width: 150px;
     margin-top: 10px;

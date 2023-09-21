@@ -26,8 +26,6 @@ form.addEventListener("submit", function (event) {
 
     targetNumber = targetBooksValue;
     localStorage.setItem("goal", targetNumber);
-    //TO-DO: save the goal.
-
 
 
     //Get user input for goal start and end date
@@ -39,7 +37,11 @@ form.addEventListener("submit", function (event) {
     localStorage.setItem("goalStartDate", startDateValue);
     localStorage.setItem("goalEndDate", endDateValue);
 
-    // window.location.href="index.html"
+    //get user input for goal notes
+    const goalNotes = document.getElementById("notes").value;
+    localStorage.setItem("goalNotes", goalNotes);
+
+    window.location.href="index.html"
 
 
 });

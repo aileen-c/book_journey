@@ -20,11 +20,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const goalEndDate = localStorage.getItem("goalEndDate");
 
 
+
     document.getElementById("start-date-display").textContent = goalStartDate;
     document.getElementById("end-date-display").textContent = goalEndDate;
 
     //display goal progress
     document.getElementById("progress-percent").textContent = Math.round(localStorage.getItem("percent"));
+
+    //display goal notes
+    document.getElementById("goal-notes").textContent = localStorage.getItem("goalNotes");
+
+    displayProgressStats();
 
     // Populate the dropdown with book titles
     const removeBookDropdown = document.getElementById('remove-book-dropdown');
@@ -64,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // You can also update the display of books on the page (if needed)
             displayBooks();
+            displayProgressStats();
         }
     });
 });
