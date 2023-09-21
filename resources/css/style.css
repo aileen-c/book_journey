@@ -7,6 +7,10 @@ body {
     background-color: #F7F7F2;
 }
 
+div {
+    border-radius: 20px;
+}
+
 /* Basic styling for header and footer */
 header, footer {
     /* background-color: #899878; */
@@ -30,12 +34,19 @@ header, footer {
 
 /* Apply styles to the text inside the boxes */
 .box {
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 24px; 
     background-color: #E4E6C3; 
     /* background-color: #fce7c5; */
     text-align: center; /* Text alignment */
     padding: 10px; /* Add padding for better visual appearance */
     margin: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.box:hover {
+    margin: 5px;
+    background-color: #d6e3f8;
 }
 
 #box1 {

@@ -1,4 +1,5 @@
 const savedReadingList = JSON.parse(localStorage.getItem('readingList')) || [];
+const savedTbrList = JSON.parse(localStorage.getItem('tbrList')) || [];
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -73,6 +74,46 @@ document.addEventListener('DOMContentLoaded', function () {
             displayProgressStats();
         }
     });
+
+
+    // Populate the TBR dropdown with book titles
+    const removeTbrDropdown = document.getElementById('remove-tbr-dropdown');
+    savedTbrList.forEach((book, index) => {
+        const option = document.createElement('option');
+        option.value = index; // Use the book index as the value
+        option.text = book.title; // Display the book title
+        removeTbrDropdown.appendChild(option);
+    });
+
+    //add remove function to tbr section
+    const confirmRemoveTbr = document.getElementById('tbr-done-remove');
+    confirmRemoveTbr.addEventListener('click', function () {
+        // Get the selected book index from the dropdown
+        const selectedBookIndex = removeTbrDropdown.value;
+
+        // Ensure a book is selected before proceeding
+        if (selectedBookIndex !== '') {
+            // Remove the selected book from the readingList array
+            savedTbrList.splice(selectedBookIndex, 1);
+
+
+            // Update the local storage (if needed)
+            localStorage.setItem('tbrList', JSON.stringify(savedTbrList));
+
+            // Repopulate the dropdown to reflect the updated list
+            removeTbrDropdown.innerHTML = '';
+            savedTbrList.forEach((book, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.text = book.title;
+                removeTbrDropdown.appendChild(option);
+            });
+
+            // You can also update the display of books on the page (if needed)
+            displayBooks();
+        }
+    });
+
 });
 
 
@@ -106,8 +147,42 @@ function displayBooks() {
         console.log("book appended!");
     });
 
+
     // Append the list to box1
     box1.appendChild(bookList);
+
+
+    //TBR LIST
+    const tbr = document.querySelector(".tbr-list-box");
+
+    // Clear any existing content in box1
+    tbr.innerHTML = "";
+    console.log("tbr list array: ");
+    console.log(savedTbrList);
+
+    // Create an unordered list to display the books
+    const tbrList = document.createElement("ul");
+    tbrList.classList.add("tbr-list");
+
+    // Loop through the savedReadingList and create list items for each book
+    savedTbrList.forEach((book) => {
+        const bookItem = document.createElement("li");
+        bookItem.classList.add("tbr-item");
+
+        // Create HTML structure to display book information
+        bookItem.innerHTML = `
+            <p>${book.title}</p>
+            <p class="book-info-text">by ${book.author}</p>
+            <p class="book-info-text">Notes: ${book.notes}</p>
+        `;
+
+        // Append the book item to the list
+        tbrList.appendChild(bookItem);
+        console.log("book appended!");
+    });
+
+    // Append the list to box1
+    tbr.appendChild(tbrList);
 
 
     updateProgressBar();

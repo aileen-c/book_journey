@@ -8,6 +8,9 @@ var numBooks = parseInt(localStorage.getItem('numBooks')) || 0;
 //initialize an empty reading list array
 const readingList = [];
 
+//initialize an empty TBR list array
+const tbrList = [];
+
 
 function updateTargetNumber(change) {
     const targetNumberElement = document.getElementById('target-number');
