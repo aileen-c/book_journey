@@ -217,6 +217,9 @@ function updateProgressBar() {
 const dropdownBtn = document.getElementById("remove-book-button");
 const dropdownMenu = document.getElementById("remove-book-dropdown");
 const doneButton = document.getElementById("done-remove");
+const tbrRemoveButton = document.getElementById("remove-tbr-button");
+const tbrDoneButton = document.getElementById("tbr-done-remove");
+const tbrDropdownMenu = document.getElementById("remove-tbr-dropdown");
 
 // Show the dropdown menu on click
 dropdownBtn.addEventListener("click", function () {
@@ -228,3 +231,13 @@ doneButton.addEventListener("click", function () {
     dropdownMenu.style.display = "none";
     doneButton.style.display = "none";
   });
+
+  tbrRemoveButton.addEventListener("click", function () {
+    tbrDropdownMenu.style.display = "block";
+    tbrDoneButton.style.display = "block";
+  });
+  
+  tbrDoneButton.addEventListener("click", function () {
+      tbrDropdownMenu.style.display = "none";
+      tbrDoneButton.style.display = "none";
+    });

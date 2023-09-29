@@ -68,3 +68,19 @@
 .tbr-list-box {
     text-align: left;
 }
+
+#remove-tbr-dropdown {
+    display: none;
+}
+
+#tbr-done-remove {
+    display: none;
+}
+
+#remove-tbr-button {
+    width: 150px;
+
+
+}
+
+
