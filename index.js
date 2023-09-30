@@ -193,7 +193,7 @@ function displayBooks() {
 
 // Function to update the progress bar
 function updateProgressBar() {
-
+    console.log("update progress bar called!");
     if (targetNumber === 0) {
         return;
     }
@@ -223,8 +223,15 @@ const tbrDropdownMenu = document.getElementById("remove-tbr-dropdown");
 
 // Show the dropdown menu on click
 dropdownBtn.addEventListener("click", function () {
-  dropdownMenu.style.display = "block";
-  doneButton.style.display = "block";
+
+    if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+        dropdownMenu.style.display = "block";
+        doneButton.style.display = "block";
+    } else {
+        dropdownMenu.style.display = "none";
+        doneButton.style.display = "none";
+    }
+
 });
 
 doneButton.addEventListener("click", function () {
@@ -233,8 +240,14 @@ doneButton.addEventListener("click", function () {
   });
 
   tbrRemoveButton.addEventListener("click", function () {
-    tbrDropdownMenu.style.display = "block";
-    tbrDoneButton.style.display = "block";
+    if (tbrDropdownMenu.style.display === "none" || tbrDropdownMenu.style.display === "") {
+        tbrDropdownMenu.style.display = "block";
+        tbrDoneButton.style.display = "block";
+    } else {
+        tbrDropdownMenu.style.display = "none";
+        tbrDoneButton.style.display = "none";
+    }
+
   });
   
   tbrDoneButton.addEventListener("click", function () {
