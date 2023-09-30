@@ -7,7 +7,7 @@
 }
 
 #remove-book-dropdown, #remove-tbr-dropdown {
-    width: 70px;
+    width: 150px;
     margin-left: 30px;
     margin-top: 10px;
     display: none;
@@ -92,13 +92,16 @@
  }
 
 .tbr-list-box {
-    max-height: 250px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
 
 .remove-tbr-container {
-    display: grid;
-    grid-template-columns: auto 1fr; /* Adjust the column widths as needed */
-    align-items: center; /* Vertically align items in the container */
+    display: flex;
+    align-items: center;
 }
+
+
+
+
