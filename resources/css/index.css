@@ -97,7 +97,7 @@
 }
 
 
-.remove-tbr-container {
+.remove-tbr-container, .remove-book-container {
     display: flex;
     align-items: center;
 }
