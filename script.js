@@ -31,6 +31,10 @@ function updateNumBooks(change) {
 
 function displayProgressStats() {
     //display number of books read/need to be read
-    document.getElementById("num-more-books").textContent = targetNumber - numBooks;
+    if (targetNumber - numBooks < 0) {
+        document.getElementById("num-more-books").textContent = 0;
+    } else {
+        document.getElementById("num-more-books").textContent = targetNumber - numBooks; 
+    }
     document.getElementById("num-books-read").textContent = numBooks;
 }
