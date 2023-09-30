@@ -72,6 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // You can also update the display of books on the page (if needed)
             displayBooks();
             displayProgressStats();
+            
+            //update goal percentage
+            document.getElementById("progress-percent").textContent = Math.round(localStorage.getItem("percent"));
+
         }
     });
 
