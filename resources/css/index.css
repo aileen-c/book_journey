@@ -102,6 +102,17 @@
     align-items: center;
 }
 
+.book-item, .tbr-item {
+    font-size: medium;
+    margin: 5px;
+    padding: 0px;
+}
+
+.book-info-text {
+    font-size: small;
+    margin: 0px;
+    padding-top: 0%;
+}
 
 
 
