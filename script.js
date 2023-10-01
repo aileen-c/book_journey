@@ -14,8 +14,8 @@ const tbrList = [];
 
 function updateTargetNumber(change) {
     const targetNumberElement = document.getElementById('target-number');
-    targetNumber += change; // Update the target number
-    targetNumberElement.textContent = targetNumber; // Update the displayed target number
+    targetNumber += change; // Update target number
+    targetNumberElement.textContent = targetNumber; // Update displayed target number
 }
 
 function updateNumBooks(change) {

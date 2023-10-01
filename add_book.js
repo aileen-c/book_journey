@@ -1,10 +1,6 @@
-
-
-
 document.getElementById("add-book-form").addEventListener("submit", function(event) {
 
-
-    event.preventDefault(); // Prevent the form from submitting in the default way
+    event.preventDefault(); 
 
     console.log("submit button pressed");
 

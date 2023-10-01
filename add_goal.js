@@ -5,15 +5,15 @@ const startDateInput = document.getElementById("goal-start-date");
 const endDateInput = document.getElementById("goal-end-date");
 
 
-// Add an event listener to the form's submit button
+// Add event listener to the form's submit button
 form.addEventListener("submit", function (event) {
-    // Prevent the form from submitting in the default way
+    // Prevent form from submitting in default way
     event.preventDefault();
 
-    // Get the user's input for target books as an integer
+    // Get user's input for target books as an integer
     const targetBooksValue = parseInt(targetBooksInput.value);
 
-    // Check if the input is a positive integer
+    // Check if input is a positive integer
     if (isNaN(targetBooksValue) || targetBooksValue <= 0 || targetBooksValue % 1 !== 0) {
         // Display an error message to the user
         alert("Please enter a valid positive integer for the target number of books.");
@@ -42,6 +42,4 @@ form.addEventListener("submit", function (event) {
     localStorage.setItem("goalNotes", goalNotes);
 
     window.location.href="index.html"
-
-
 });

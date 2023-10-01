@@ -5,7 +5,6 @@ const savedTbrList = JSON.parse(localStorage.getItem('tbrList')) || [];
 document.addEventListener('DOMContentLoaded', function () {
     displayBooks();
 
-    // Select the <p> element by its id
     const targetNumberDisplay = document.getElementById("target-number");
 
     // Update the content of the element with the targetNumber value
@@ -15,12 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
     numBooksDisplay.innerHTML = numBooks;
     console.log(numBooks);
 
-
     //display goal dates
     const goalStartDate = localStorage.getItem("goalStartDate");
     const goalEndDate = localStorage.getItem("goalEndDate");
-
-
 
     document.getElementById("start-date-display").textContent = goalStartDate;
     document.getElementById("end-date-display").textContent = goalEndDate;
@@ -43,8 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
-    // Add an event listener to the "Confirm Remove" button
     const confirmRemoveButton = document.getElementById('done-remove');
     confirmRemoveButton.addEventListener('click', function () {
         // Get the selected book index from the dropdown
@@ -60,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Update the local storage (if needed)
             localStorage.setItem('readingList', JSON.stringify(savedReadingList));
 
-            // Repopulate the dropdown to reflect the updated list
+            // Repopulate dropdown to reflect updated list
             removeBookDropdown.innerHTML = '';
             savedReadingList.forEach((book, index) => {
                 const option = document.createElement('option');
@@ -69,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 removeBookDropdown.appendChild(option);
             });
 
-            // You can also update the display of books on the page (if needed)
+            //update the display of books and progress
             displayBooks();
             displayProgressStats();
             
@@ -95,11 +89,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Get the selected book index from the dropdown
         const selectedBookIndex = removeTbrDropdown.value;
 
-        // Ensure a book is selected before proceeding
+        // Ensure a book is selected
         if (selectedBookIndex !== '') {
             // Remove the selected book from the readingList array
             savedTbrList.splice(selectedBookIndex, 1);
-
 
             // Update the local storage (if needed)
             localStorage.setItem('tbrList', JSON.stringify(savedTbrList));
@@ -113,11 +106,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 removeTbrDropdown.appendChild(option);
             });
 
-            // You can also update the display of books on the page (if needed)
+            //update the display of books
             displayBooks();
         }
     });
-
 });
 
 
@@ -151,10 +143,8 @@ function displayBooks() {
         console.log("book appended!");
     });
 
-
     // Append the list to box1
     box1.appendChild(bookList);
-
 
     //TBR LIST
     const tbr = document.querySelector(".tbr-list-box");
@@ -168,7 +158,7 @@ function displayBooks() {
     const tbrList = document.createElement("ul");
     tbrList.classList.add("tbr-list");
 
-    // Loop through the savedReadingList and create list items for each book
+    // Loop through the savedTBRList and create list items for each book
     savedTbrList.forEach((book) => {
         const bookItem = document.createElement("li");
         bookItem.classList.add("tbr-item");
@@ -187,8 +177,6 @@ function displayBooks() {
 
     // Append the list to box1
     tbr.appendChild(tbrList);
-
-
     updateProgressBar();
 
 

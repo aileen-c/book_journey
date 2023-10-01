@@ -2,14 +2,9 @@
 
 
 document.getElementById("add-tbr-form").addEventListener("submit", function(event) {
-
-
-    event.preventDefault(); // Prevent the form from submitting in the default way
+    event.preventDefault(); // Prevent form from submitting in default way
 
     console.log("submit button pressed");
-
-
-
 
     //collect book data from form
     const title = document.getElementById("title").value;
@@ -23,13 +18,9 @@ document.getElementById("add-tbr-form").addEventListener("submit", function(even
         notes: notes
     };
 
-
-    // addBookToReadingList(book);
-
         addBookToTbrList(book);
     //clear form
     document.getElementById("add-tbr-form").reset();
-
 });
 
 

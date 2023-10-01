@@ -34,7 +34,6 @@
 }
 
 .remove-book-container {
-    /* grid-template-columns: 1fr 1fr; */
     display: grid;
 }
 
@@ -55,9 +54,9 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 5px; /* Adjust padding as needed */
-    font-size: 14px; /* Adjust font size as needed */
-    margin-top: 10px; /* Adjust the margin to position below the progress bar */
+    padding: 0 5px; 
+    font-size: 14px; 
+    margin-top: 10px; 
 }
 
 .info {
@@ -114,5 +113,13 @@
     padding-top: 0%;
 }
 
+#tbr-description {
+    font-size: 14px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
 
+#tbr-heading {
+    margin-bottom: 5px;
+}
 
