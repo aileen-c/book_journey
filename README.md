@@ -1,6 +1,6 @@
 # Book Journey
 
-Book Journey is a straightforward web app designed to help you manage your reading list and reading goals.
+Book Journey is a simple web app designed to help you manage your reading list and reading goals.
 
 ## Features
 
